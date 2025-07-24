@@ -26,4 +26,7 @@ logging:
   level:
     root: INFO
 
+jwt:
+  secret: ThisIsAVeryStrongSecretKeyForJWTThatYouStoreInVaultLater
+  expiration: 86400000 # 24 hours in milliseconds
 
