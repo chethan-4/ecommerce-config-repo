@@ -1,14 +1,21 @@
+server:
+  port: 8081
+
 spring:
   application:
     name: user-service
+
   r2dbc:
     url: r2dbc:postgresql://localhost:5432/userdb
     username: postgres
-    password: password
+    password: root
 
-  cloud:
-    config:
-      uri: http://localhost:8888
+
+  datasource: # Optional if someone tries to use blocking JPA accidentally
+    driver-class-name: org.postgresql.Driver
+    url: jdbc:postgresql://localhost:5432/userdb
+    username: postgres
+    password: root
 
 eureka:
   client:
@@ -17,5 +24,6 @@ eureka:
 
 logging:
   level:
-    com.ecommerce.user: DEBUG
+    root: INFO
+
 
