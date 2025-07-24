@@ -1,19 +1,21 @@
-server:
-  port: 8081
-
 spring:
   application:
     name: user-service
-
-  datasource:
-    url: jdbc:postgresql://localhost:5432/userdb
-    username: user
+  r2dbc:
+    url: r2dbc:postgresql://localhost:5432/userdb
+    username: postgres
     password: password
-  jpa:
-    hibernate:
-      ddl-auto: update
-    show-sql: true
 
-jwt:
-  secret: my-secret-key
-  expiration: 86400000
+  cloud:
+    config:
+      uri: http://localhost:8888
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8762/eureka
+
+logging:
+  level:
+    com.ecommerce.user: DEBUG
+
