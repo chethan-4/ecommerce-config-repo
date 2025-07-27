@@ -28,5 +28,6 @@ logging:
 
 jwt:
   secret: ThisIsAVeryStrongSecretKeyForJWTThatYouStoreInVaultLater
-  expiration: 86400000 # 24 hours in milliseconds
+  accessExpiration: 900000
+  refreshExpiration: 604800000
 
