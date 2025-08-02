@@ -1,0 +1,38 @@
+spring:
+  application:
+    name: product-service
+
+  r2dbc:
+    url: r2dbc:postgresql://localhost:5432/userdb
+    username: postgres
+    password: root
+
+  datasource: # Optional if someone tries to use blocking JPA accidentally
+    driver-class-name: org.postgresql.Driver
+    url: jdbc:postgresql://localhost:5432/userdb
+    username: postgres
+    password: root
+
+  jackson:
+    serialization:
+      INDENT_OUTPUT: true
+
+  main:
+    web-application-type: reactive
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka
+
+  instance:
+    prefer-ip-address: true
+    hostname: localhost
+
+logging:
+  level:
+    root: INFO
+    com.ecommerce.productservice: DEBUG
+
+server:
+  port: 0
