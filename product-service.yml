@@ -3,13 +3,13 @@ spring:
     name: product-service
 
   r2dbc:
-    url: r2dbc:postgresql://localhost:5432/userdb
+    url: r2dbc:postgresql://localhost:5432/productdb
     username: postgres
     password: root
 
   datasource: # Optional if someone tries to use blocking JPA accidentally
     driver-class-name: org.postgresql.Driver
-    url: jdbc:postgresql://localhost:5432/userdb
+    url: jdbc:postgresql://localhost:5432/productdb
     username: postgres
     password: root
 
